@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Bioinformatics platform</title>
+        
+        <link rel="stylesheet" href="/clinical_genomics/assets/css/bootstrap.min.css?v=3">
+        <link rel="stylesheet" href="/clinical_genomics/assets/css/bootstrap-toc.min.css">
+        <link rel="stylesheet" href="/clinical_genomics/assets/css/main.css?v=2">
+        <link rel="stylesheet" href="/clinical_genomics/assets/css/font-awesome.css">
+        <link rel="stylesheet" href="/clinical_genomics/assets/css/academicons.css">
+        <link rel="stylesheet" href="/clinical_genomics/assets/css/syntax_highlighting.css">
+        <link rel="shortcut icon" href="/clinical_genomics/favicon.ico" type="image/x-icon" />
+
+        
+        
+        
+        
+        
+        <meta name="description" content="Collection of tutorials developed and maintained by the w..." />
+        <meta property="og:title" content="Galaxy Training: Bioinformatics platform" />
+        <meta property="og:description" content="Collection of tutorials developed and maintained by the w..." />
+        <meta property="og:image" content="/clinical_genomics/assets/images/GTNLogo1000.png" />
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container main-content">
+    <script type="application/ld+json">
+        
+
+
+{}
+    </script>
+
+    <section class="tutorial">
+        <h1 data-toc-skip>Bioinformatics platform</h1>
+        
+
+        <div class="contributors-line">By: 
+
+<a href="/clinical_genomics/hall-of-fame#tgiangregorio" class="contributor-badge"><img src="https://avatars.githubusercontent.com/tgiangregorio" alt="Tania Giangregorio">Tania Giangregorio</a>, <a href="/clinical_genomics/hall-of-fame#easydorica" class="contributor-badge"><img src="https://avatars.githubusercontent.com/easydorica" alt="Federica Isidori">Federica Isidori</a>, <a href="/clinical_genomics/hall-of-fame#tommasopippucci" class="contributor-badge"><img src="https://avatars.githubusercontent.com/tommasopippucci" alt="Tommaso Pippucci">Tommaso Pippucci</a>
+
+</div>
+
+        <blockquote class="overview">
+            <h3>Overview</h3>
+            <strong><i class="fa far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</strong>
+            <ul>
+            
+            <li><p>{}</p>
+</li>
+            
+            <li><p>{}</p>
+</li>
+            
+            </ul>
+
+            <strong><i class="fa fas fa-bullseye" aria-hidden="true"></i><span class="visually-hidden">objectives</span> Objectives</strong>
+            <ul>
+            
+            <li><p>Perform in-depth analysis of sequencing data at multiple levels (fastq, bam, vcf)</p>
+</li>
+            
+            <li><p>Software design and development</p>
+</li>
+            
+            </ul>
+
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <p><strong> <i class="fa far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Jul 19, 2022 </p>
+        </blockquote>
+
+        <div class="container">
+            <div class="row">
+                <!-- sidebar, which will move to the top on a small screen -->
+                <div class="col-sm-2">
+                    <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <h1 class="no_toc" id="introduction">Introduction</h1>
+
+<p>The solution adopted by the IRCCS S.Orsola-Malpighi uses a modular hyper-converged infrastructure that integrates compute and data storage in a single cluster.
+Takes advantages of automation and version control systems to handle bioinformatics software and exploits various tools for genomics data analysis, fruition and preservation:</p>
+<ul>
+  <li><a href="https://galaxyproject.org/"><em><strong><span class="notranslate">Galaxy</span></strong></em></a> a platform for FAIR data analysis that enables users with no programming experience to perform computational analysis using a web user-friendly interface.</li>
+  <li><a href="https://snakemake.readthedocs.io/en/stable/"><em><strong>Snakemake</strong></em></a> a <span class="notranslate">workflow</span> management system to create reproducible and scalable data analyses.</li>
+  <li><a href="https://slurm.schedmd.com/documentation.html"><em><strong>Slurm</strong></em></a> a resource management and a job scheduling system.</li>
+  <li><a href="https://docs.conda.io/en/latest/"><em><strong>Conda</strong></em></a> a package management system and environment management system.</li>
+  <li><a href="http://docs.opencb.org/display/opencga/Welcome+to+OpenCGA"><em><strong>OpenCGA</strong></em></a> a framework for storing and querying genomics data.</li>
+  <li><a href="https://docs.gitlab.com/"><em><strong>GitLab</strong></em></a> an application for software development, security, and operations that enables concurrent DevOps.</li>
+</ul>
+
+<blockquote class="agenda">
+  <h3 id="agenda">Agenda</h3>
+
+  <p>In this documentation, you can find:</p>
+
+<ol id="markdown-toc">
+  <li><a href="#galaxy" id="markdown-toc-galaxy"><span class="notranslate">Galaxy</span></a>    <ol>
+      <li><a href="#mantained-galaxy-workflow" id="markdown-toc-mantained-galaxy-workflow">Mantained <span class="notranslate">Galaxy</span> <span class="notranslate">workflow</span></a></li>
+    </ol>
+  </li>
+  <li><a href="#commandline-interface-cli" id="markdown-toc-commandline-interface-cli">Commandline interface (CLI)</a>    <ol>
+      <li><a href="#mantained-cli-workflow" id="markdown-toc-mantained-cli-workflow">Mantained CLI <span class="notranslate">workflow</span></a></li>
+    </ol>
+  </li>
+  <li><a href="#opencga" id="markdown-toc-opencga">OpenCGA</a></li>
+  <li><a href="#tools-available" id="markdown-toc-tools-available">Tools available</a></li>
+  <li><a href="#gitlab" id="markdown-toc-gitlab">Gitlab</a></li>
+</ol>
+
+</blockquote>
+
+<h1 id="galaxy"><span class="notranslate">Galaxy</span></h1>
+
+<p>To launch <a href="https://galaxy.aosp.biodec.com"><span class="notranslate">Galaxy</span> aosp instance</a> browse to <span class="notranslate">Galaxy</span> aosp instance <a href="https://galaxy.aosp.biodec.com"><span class="notranslate">galaxy</span>.aosp.biodec.com</a>. Click the <strong>Log in or register</strong> link (top panel) and enter your email and password.</p>
+
+<blockquote>
+  <blockquote class="comment">
+    <h3 id="comment-galaxy"><i class="fa far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden">comment</span> <span class="notranslate">Galaxy</span></h3>
+    <p><a href="https://galaxyproject.org/"><span class="notranslate">Galaxy</span></a> is an open, web-based platform for accessible, reproducible, and transparent computational research. As a first step with <span class="notranslate">Galaxy</span> visit the page <a href="https://galaxyproject.org/get-started/">https://<span class="notranslate">galaxy</span>project.org/get-started/</a>. A collection of tutorials developed and maintained by the <span class="notranslate">Galaxy</span> community is available at <a href="https://training.galaxyproject.org/training-material/">https://training.<span class="notranslate">galaxy</span>project.org/training-material</a>. To view the list of tools that can be used within the <span class="notranslate">Galaxy</span> instance visit <a href="https://toolshed.g2.bx.psu.edu/">https://<span class="notranslate">toolshed</span>.g2.bx.psu.edu/</a>.</p>
+  </blockquote>
+</blockquote>
+
+<h2 id="mantained-galaxy-workflow">Mantained <span class="notranslate">Galaxy</span> <span class="notranslate">workflow</span></h2>
+
+<p>The Medical Genetics unit had been developing <span class="notranslate">Galaxy</span> analysis pipelines for use with it’s genomics data:</p>
+<ul>
+  <li><a href="https://git.aosp.biodec.com/genetica-medica/rabdomyzer-xml/-/wikis/home"><span class="notranslate">Galaxy</span> <span class="notranslate">workflow</span> to run Rabdomyzer tool</a></li>
+  <li><a href="https://git.aosp.biodec.com/aosp/piattaforma-bioinformatica/-/wikis/Galaxy-workflow-for-gene-panel"><span class="notranslate">Galaxy</span> <span class="notranslate">workflow</span> for the analysis of amplicon-based gene panel</a></li>
+</ul>
+
+<h1 id="commandline-interface-cli">Commandline interface (CLI)</h1>
+
+<h2 id="mantained-cli-workflow">Mantained CLI <span class="notranslate">workflow</span></h2>
+
+<p><a href="https://git.aosp.biodec.com/tania.giangregorio/exome-germline-snv-indels-smk/-/wikis/Workflow%20snakemake%20per%20l'analisi%20dell'esoma"><span class="notranslate">Workflow</span> snakemake for WES data pre-processing and germline short variants calling, SNV and indels</a> <br />
+<span class="notranslate">Workflow</span> snakemake for WGS data pre-processing and germline short variants calling (SNV and indels) <br />
+<span class="notranslate">Workflow</span> snakemake for BAM conversion to CRAM <br /></p>
+
+<h1 id="opencga">OpenCGA</h1>
+
+<h1 id="tools-available">Tools available</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>Version</th>
+      <th><span class="notranslate">Galaxy</span></th>
+      <th>Commandline</th>
+      <th>Conda Environment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/Ensembl/ensembl-vep">ensembl-vep</a></td>
+      <td>101.0</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>vep</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/hall-lab/bamkit">bamkit</a></td>
+      <td>16.07.26</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>svtools</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/adamewing/bamsurgeon">bamsurgeon</a></td>
+      <td>1.2</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>bamsurgeon1.2</td>
+    </tr>
+    <tr>
+      <td><a href="https://samtools.github.io/bcftools/bcftools.html">bcftools</a></td>
+      <td>1.9</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>aligners<br />bamsurgeon1.2</td>
+    </tr>
+    <tr>
+      <td><a href="https://bedtools.readthedocs.io/en/latest/content/overview.html"><span class="notranslate">bed</span>tools</a></td>
+      <td>2.27.1<br />2.30.0</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>aligners<br />sv2</td>
+    </tr>
+    <tr>
+      <td><a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs">blast</a></td>
+      <td>2.10.1</td>
+      <td>available in Tool Shed</td>
+      <td>✅</td>
+      <td>svtools</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/lh3/bwa">bwa</a></td>
+      <td>0.7.17</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>aligners<br />bamsurgeon1.2<br />svtools</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/KarchinLab/CLUMP">clump</a></td>
+      <td>1.0.0</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>clump</td>
+    </tr>
+    <tr>
+      <td><a href="https://bioconductor.org/packages/release/bioc/html/CNVfilteR.html">cnvfilter</a></td>
+      <td>1.6.0</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>cnvfilter</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/etal/cnvkit">cnvkit</a></td>
+      <td>0.9.7</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>cnvkit</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/abyzovlab/CNVpytor">cnvpytor</a></td>
+      <td>1</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>cnvpytor</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/nkrumm/CoNIFER">CoNIFER</a></td>
+      <td>0.2.2</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>conifer</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/RahmanTeam/DECoN">DECoN</a></td>
+      <td>1.0.2</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>decon</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dellytools/delly">delly</a></td>
+      <td>0.8.5</td>
+      <td>available in Tool Shed</td>
+      <td>✅</td>
+      <td>svtools</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Ensembl/ensembl-vep">ensembl-vep</a></td>
+      <td>101</td>
+      <td>available in Tool Shed</td>
+      <td>✅</td>
+      <td>vep</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.utahresearch.org/mingfuzhu/erds/">erds</a></td>
+      <td>1.1</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>erds</td>
+    </tr>
+    <tr>
+      <td><a href="">excavator2</a></td>
+      <td>2.0.0</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>singularity</td>
+    </tr>
+    <tr>
+      <td><a href="http://exomiser.github.io/Exomiser/">exomiser</a></td>
+      <td> </td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>exomiser</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate-manual">exonerate</a></td>
+      <td>2.4.0</td>
+      <td>available in Tool Shed</td>
+      <td>✅</td>
+      <td>bamsurgeon1.2</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/OpenGene/fastp">fastp</a></td>
+      <td>0.20.1</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>quality</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">fastqc</a></td>
+      <td>0.11.8</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>aligners<br />quality</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.broadinstitute.org/gatk/">gatk</a></td>
+      <td>4.1.2.0<br />3.8</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>gatk4<br />gatk3</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/PapenfussLab/gridss">gridss</a></td>
+      <td>2.10.1</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>svtools</td>
+    </tr>
+    <tr>
+      <td><a href="https://bimberlab.github.io/DISCVRSeq">IntegrationSiteMapper</a></td>
+      <td>1.3.8</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>discvrseq</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/DerrickWood/kraken2">kraken2</a></td>
+      <td>2.1.0</td>
+      <td>available in Tool Shed</td>
+      <td>✅</td>
+      <td>svtools</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/arq5x/lumpy-sv">lumpy-sv</a></td>
+      <td>0.3.1</td>
+      <td>available in Tool Shed</td>
+      <td>✅</td>
+      <td>svtools</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Illumina/manta">manta</a></td>
+      <td>1.6.0</td>
+      <td>available in Tool Shed</td>
+      <td>✅</td>
+      <td>svtools</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/shendurelab/MIPGEN">mipgen</a></td>
+      <td>4</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>mipgen</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/brentp/mosdepth">mosdepth</a></td>
+      <td>0.3.1</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>quality</td>
+    </tr>
+    <tr>
+      <td><a href="https://multiqc.info/">multiqc</a></td>
+      <td>1.9</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>aligners<br />quality</td>
+    </tr>
+    <tr>
+      <td><a href="https://cme.h-its.org/exelixis/web/software/pear/">pear</a></td>
+      <td>0.9.6</td>
+      <td>available in Tool Shed</td>
+      <td>✅</td>
+      <td>pear</td>
+    </tr>
+    <tr>
+      <td><a href="http://broadinstitute.github.io/picard/">picard</a></td>
+      <td>2.18.14</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>aligners</td>
+    </tr>
+    <tr>
+      <td><a href="https://daler.github.io/pybedtools/">pybedtools</a></td>
+      <td>0.8.1</td>
+      <td>available in Tool Shed</td>
+      <td>✅</td>
+      <td>sv2</td>
+    </tr>
+    <tr>
+      <td><a href="https://docs.python.org/3/">python</a></td>
+      <td>2.7.15</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>bamsurgeon1.2</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.r-project.org/">r</a></td>
+      <td>3.5.1</td>
+      <td>available on <span class="notranslate">galaxy</span>.eu.org</td>
+      <td>✅</td>
+      <td>rstudio</td>
+    </tr>
+    <tr>
+      <td><a href="https://cran.r-project.org/web/packages/ExomeDepth/index.html">r-exomedepth</a></td>
+      <td>1.1.15</td>
+      <td>available in Tool Shed</td>
+      <td>✅</td>
+      <td>decon</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/biod/sambamba">sambamba</a></td>
+      <td>0.7.1</td>
+      <td>available in Tool Shed</td>
+      <td>✅</td>
+      <td>svtools</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/GregoryFaust/samblaster">samblaster</a></td>
+      <td>0.1.26</td>
+      <td>available in Tool Shed</td>
+      <td>✅</td>
+      <td>svtools</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/samtools/samtools">samtools</a></td>
+      <td>0.1.19<br />1.1<br />1.9<br />1.9</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>erds<br />svtools<br />bamsurgeon1.2<br />aligners</td>
+    </tr>
+    <tr>
+      <td><a href="https://apptainer.org/">singularity</a></td>
+      <td>3.6.3</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>singularity</td>
+    </tr>
+    <tr>
+      <td><a href="https://snakemake.github.io/">snakemake</a></td>
+      <td>7.3.8</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>snakemake</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/genome/somatic-sniper">somatic-sniper</a></td>
+      <td>1.0.5.0</td>
+      <td>available in Tool Shed</td>
+      <td>✅</td>
+      <td>bamsurgeon1.2</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/fritzsedlazeck/SURVIVOR">survivor</a></td>
+      <td>1.0.7</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>svtools</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dantaki/SV2">sv2</a></td>
+      <td>1.4.3.4</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>sv2</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/walaj/svaba">svaba</a></td>
+      <td>1.1.0</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>svaba</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/hall-lab/svtyper">svtyper</a></td>
+      <td>0.7.1</td>
+      <td>available in Tool Shed</td>
+      <td>✅</td>
+      <td>svtools</td>
+    </tr>
+    <tr>
+      <td><a href="https://svviz2.readthedocs.io/en/latest/">svviz2</a></td>
+      <td>2.0a3</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>svviz2</td>
+    </tr>
+    <tr>
+      <td><a href="https://tcoffee.readthedocs.io/en/latest/tcoffee_quickstart.html">t_coffee</a></td>
+      <td>11.0.8</td>
+      <td>available in Tool Shed</td>
+      <td>✅</td>
+      <td>vep</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Manuelaio/unCOVERApp">uncoverapp</a></td>
+      <td>1.6.0</td>
+      <td>in progress</td>
+      <td>✅</td>
+      <td>uncoverapp</td>
+    </tr>
+    <tr>
+      <td><a href="https://bimberlab.github.io/DISCVRSeq">VariantQC</a></td>
+      <td>1.3.8</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>discvrseq</td>
+    </tr>
+    <tr>
+      <td><a href="http://dkoboldt.github.io/varscan/">varscan</a></td>
+      <td>2.4.3</td>
+      <td>available in Tool Shed (iuc)</td>
+      <td>✅</td>
+      <td>bamsurgeon1.2</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dzerbino/velvet">velvet</a></td>
+      <td>1.2.10</td>
+      <td>available in Tool Shed (devteams)</td>
+      <td>✅</td>
+      <td>bamsurgeon1.2</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/atks/vt">vt</a></td>
+      <td>2015.11.10</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>vt</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/andyrimmer/Platypus">platypus-variant</a></td>
+      <td>0.8.1.1</td>
+      <td>❌</td>
+      <td>✅</td>
+      <td>platypus-variant</td>
+    </tr>
+    <tr>
+      <td>h3m2</td>
+      <td> </td>
+      <td> </td>
+      <td>✅</td>
+      <td>custom</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="gitlab">Gitlab</h1>
+
+<h1 class="no_toc" id="contributors">Contributors</h1>
+<ul>
+  <li>Tania Giangregorio - Sant’Orsola-Malpighi University Hospital, Bologna, Italy</li>
+  <li>Federica Isidori - Sant’Orsola-Malpighi University Hospital, Bologna, Italy</li>
+  <li><a href="https://www.aosp.bo.it/content/curriculum?E=154659">Tommaso Pippucci</a> - Sant’Orsola-Malpighi University Hospital, Bologna, Italy</li>
+</ul>
+
+
+
+                    
+
+                    
+
+                  
+
+                    <h1>Citing this Tutorial</h1>
+                    <p>
+                        <ol>
+                            <li id="citation-text">Tania Giangregorio, Federica Isidori, Tommaso Pippucci, 2022 <b>Bioinformatics platform (Galaxy Training Materials)</b>. <a href="/clinical_genomics/">/clinical_genomics/</a> Online; accessed TODAY
+                            </li>
+                            <li>
+                            Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
+                            </li>
+                        </ol>
+                    </p>
+
+
+                    <blockquote class="details">
+                      <h3><i class="fa fa-info-circle" aria-hidden="true"></i><span class="visually-hidden">details</span> BibTeX</h3>
+                      <p style="display: none;">
+
+                    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight">
+<code id="citation-code">@misc{-,
+    author = "Tania Giangregorio and Federica Isidori and Tommaso Pippucci",
+    title = "Bioinformatics platform (Galaxy Training Materials)",
+    year = "2022",
+    month = "07",
+    day = "19"
+    url = "\url{/clinical_genomics/}",
+    note = "[Online; accessed TODAY]"
+}
+@article{Batut_2018,
+        doi = {10.1016/j.cels.2018.05.012},
+        url = {https://doi.org/10.1016%2Fj.cels.2018.05.012},
+        year = 2018,
+        month = {jun},
+        publisher = {Elsevier {BV}},
+        volume = {6},
+        number = {6},
+        pages = {752--758.e1},
+        author = {B{\'{e}}r{\'{e}}nice Batut and Saskia Hiltemann and Andrea Bagnacani and Dannon Baker and Vivek Bhardwaj and Clemens Blank and Anthony Bretaudeau and Loraine Brillet-Gu{\'{e}}guen and Martin {\v{C}}ech and John Chilton and Dave Clements and Olivia Doppelt-Azeroual and Anika Erxleben and Mallory Ann Freeberg and Simon Gladman and Youri Hoogstrate and Hans-Rudolf Hotz and Torsten Houwaart and Pratik Jagtap and Delphine Larivi{\`{e}}re and Gildas Le Corguill{\'{e}} and Thomas Manke and Fabien Mareuil and Fidel Ram{\'{\i}}rez and Devon Ryan and Florian Christoph Sigloch and Nicola Soranzo and Joachim Wolff and Pavankumar Videm and Markus Wolfien and Aisanjiang Wubuli and Dilmurat Yusuf and James Taylor and Rolf Backofen and Anton Nekrutenko and Björn Grüning},
+        title = {Community-Driven Data Analysis Training for Biology},
+        journal = {Cell Systems}
+}</code>
+                    </pre></div></div>
+                    </p>
+                    </blockquote>
+
+
+<script type="text/javascript">
+// update the date on load, or leave fallback of 'today'
+d = new Date();
+document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", d.toDateString());
+document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", d.toDateString());
+</script>
+
+                </div>
+            </div>
+        </div>
+
+        <!--h3><i class="fa far fa-thumbs-up" aria-hidden="true"></i><span class="visually-hidden">congratulations</span> Congratulations on successfully completing this tutorial!</h3-->
+
+        
+
+        
+
+        <hr>
+        <br>
+
+        <blockquote class="feedback">
+            <h3><i class="fa far fa-comments" aria-hidden="true"></i><span class="visually-hidden">feedback</span> Give us feedback on this content!</h3>
+            <p>To give us feedback about these materials, or to get in touch with us, post a message in
+               the forum <a href="https://groups.google.com/d/forum/sigu-training">https://groups.google.com/d/forum/sigu-training</a>.</p>
+        </blockquote>
+    </section>
+</div>
+
+
+<footer>
+    <div class="container">
+        <p>
+            The layout of this page is based on the <a href="https://training.galaxyproject.org/">Galaxy Training Resources</a> collection.
+        </p>
+        <p>
+            Found a typo? Something is wrong in this tutorial? Edit it on
+            <a href="/blob/master/index.md">GitHub</a>.
+        </p>
+    </div>
+</footer>
+
+    </body>
+    <script type="text/javascript" src="/clinical_genomics/assets/js/jquery.slim.min.js"></script>
+    <script type="text/javascript" src="/clinical_genomics/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="/clinical_genomics/assets/js/bootstrap.min.js?v=3"></script>
+    <script type="text/javascript" src="/clinical_genomics/assets/js/details-element-polyfill.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/clinical_genomics/assets/js/bootstrap-toc.min.js"></script>
+    <script type="text/javascript" src="/clinical_genomics/assets/js/main.js"></script>
+
+    <script type="text/javascript" src="/clinical_genomics/assets/js/clipboard.min.js"></script>
+    <script type="text/javascript">
+    var snippets=document.querySelectorAll('div.highlight');
+    [].forEach.call(snippets,function(snippet){
+        snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+    });
+
+    var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{
+        target:function(trigger){return trigger.nextElementSibling;
+    }});
+    </script>
+    
+</html>

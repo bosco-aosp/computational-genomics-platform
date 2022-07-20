@@ -1,0 +1,222 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing these this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+---
+title: "Bioinformatic Platform"
+email: email@gmail.com
+description: A collection of tutorials generated and maintained by UO Genetica Medica Sant'Orsola 
+url: "https://tgiangregorio.github.io"
+baseurl: "/clinical_genomics"
+github_repository: "https://github.com/tgiangregorio/clinical_genomics"
+github_repository_branch: "master"
+gitter_url: "https://gitter.im/Galaxy-Training-Network/Lobby"
+logo: "assets/images/GTN.png"
+small_logo: "assets/images/GTN-60px.png"
+help_url: https://help.galaxyproject.org/
+other_languages: #"fr, ja, es, pt, ar"
+  en: English
+  fr: Français
+  ja: 日本語
+  es: Español
+  pt: Português
+  ar: العربية
+
+words_to_not_translate:
+- bed
+- dna
+- expression
+- downstream
+- galaxy
+- mapping
+- reads
+- rna
+- single cell
+- single-cell
+- toolshed
+- upstream
+- wiggle
+- workflow
+
+# Where things are
+source: .
+destination: ./docs
+plugins_dir: _plugins
+layouts_dir: _layouts
+data_dir: metadata
+includes_dir: .
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  auto_ids: true
+  toc_levels: 1..2
+
+
+# Figure plugin parameters
+figurify:
+  skip_empty: true  # or false if you want to generate all figures, even those without any alt or title
+  skip_layouts:
+    - introduction_slides
+    - tutorial_slides
+    - base_slides
+  skip_titles:
+    - Example of an image with a caption
+
+abbreviate:
+  skip_layouts:
+    - introduction_slides
+    - tutorial_slides
+    - base_slides
+
+# Icon tag config
+icon-tag:
+  announcement: fas fa-bullhorn
+  code-in: far fa-keyboard
+  code-out: fas fa-laptop-code
+  cofest: fas fa-users
+  comment: far fa-comment-dots
+  congratulations: far fa-thumbs-up
+  curriculum: fas fa-graduation-cap
+  details: fas fa-info-circle
+  docker_image: fab fa-docker
+  email: far fa-envelope
+  exchange: fas fa-exchange-alt
+  event: far fa-calendar
+  feedback: far fa-comments
+  galaxy-barchart: fas fa-chart-bar
+  galaxy-bug: fas fa-bug
+  galaxy-chart-select-data: fas fa-database
+  galaxy-clear: fas fa-times-circle
+  galaxy-columns: fas fa-columns
+  galaxy-cross: fas fa-times
+  galaxy-dropdown: fas fa-caret-down
+  galaxy-eye: far fa-eye
+  galaxy-gear: fas fa-cog
+  galaxy-history: fas fa-columns
+  galaxy-home: fas fa-home
+  galaxy-info: fas fa-info-circle
+  galaxy-library: far fa-folder
+  galaxy-link: fas fa-link
+  galaxy-panelview: fas fa-list
+  galaxy-pencil: fas fa-pencil-alt
+  galaxy-refresh: fas fa-redo
+  galaxy-rulebuilder-history: fas fa-history
+  galaxy-save: far fa-save
+  galaxy-scratchbook: fas fa-th
+  galaxy-selector: far fa-check-square
+  galaxy-star: far fa-star
+  galaxy-tags: fas fa-tags
+  galaxy-toggle: fas fa-toggle-on
+  galaxy-upload: fas fa-upload
+  galaxy-wf-connection: fas fa-arrows-alt-h
+  galaxy-wf-edit: fa fa-edit
+  galaxy-wf-new: fas fa-plus
+  galaxy-wf-report-download: fas fa-print
+  galaxy_instance: fas fa-external-link-alt
+  github: fab fa-github
+  gitter: fab fa-gitter
+  gtn-theme: fas fa-palette
+  hall-of-fame: fas fa-users
+  hands_on: fas fa-pencil-alt
+  help: far fa-question-circle
+  history-annotate: fas fa-comment
+  history-share: fas fa-toggle-on
+  instances: fas fa-globe
+  interactive_tour: fas fa-magic
+  keypoints: fas fa-key
+  language: fas fa-language
+  last_modification: far fa-calendar
+  level: fas fa-graduation-cap
+  license: fas fa-balance-scale
+  linkedin: fab fa-linkedin
+  new-history: fas fa-plus
+  notebook: far fa-file-code
+  objectives: fas fa-bullseye
+  orcid: fab fa-orcid
+  param-check: far fa-check-square
+  param-collection: far fa-folder
+  param-file: far fa-file
+  param-files: far fa-copy
+  param-repeat: far fa-plus-square
+  param-select: fas fa-filter
+  param-text: fas fa-pencil-alt
+  question: far fa-question-circle
+  references: far fa-bookmark
+  requirements: fas fa-check-circle
+  rss-feed: fas fa-rss
+  search: fas fa fa-search
+  slides: fab fa-slideshare
+  solution: far fa-eye
+  sticky-note: fas fa-sticky-note
+  time: fas fa-hourglass-half
+  text-document: fas fa-file-alt
+  tip: far fa-lightbulb
+  tool: fas fa-wrench
+  tool-versions: fas fa-cubes
+  topic: far fa-folder
+  trophy: fas fa-trophy
+  tutorial: fas fa-laptop
+  twitter: fab fa-twitter
+  warning: fas fa-exclamation-triangle
+  wf-input: fas fa-chevron-circle-right
+  workflow-runtime-toggle: far fa-caret-square-up
+  workflow: fas fa-share-alt
+  workflow-run: fas fa-play
+  video: fas fa-video
+  video-slides: far fa-play-circle
+  zenodo_link: far fa-copy
+
+# To exclude in _site
+exclude:
+  - shared/font-awesome/src/
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - CONTRIBUTING.md
+  - CONTRIBUTORS.yaml
+  - CODEOWNERS
+  - CODE_OF_CONDUCT.md
+  - LICENSE.md
+  - README.md
+  - Makefile
+  - miniconda.sh
+  - "**/README.md"
+  - "**/*.sh"
+  - bin/
+  - metadata/
+  - templates/
+  - vendor/
+  - node_modules/
+  - .jekyll-cache/
+  - snippets
+  - plantuml.jar
+  - "**/plantuml.jar"
+  - Procfile
+  - app.json
+  - .venv
+  # These are provided by an S3 proxy in production
+  - videos/topics/
+include:
+  - .nojekyll
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-last-modified-at
