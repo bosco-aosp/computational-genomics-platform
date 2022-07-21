@@ -3,7 +3,7 @@
 ### Updating GitHub Pages - for Admins only
 Automatic update of GitHub pages through Jekyll is disabled. To update pages you have to build the website locally and push the updated pages:
 
- * Clone this repository with [`gitpod.io/#https://github.com/tgiangregorio/computational-genomics-platform`](gitpod.io/#https://github.com/tgiangregorio/computational-genomics-platform)
+ * Clone this repository with [`https://gitpod.io/#https://github.com/tgiangregorio/computational-genomics-platform`](https://gitpod.io/#https://github.com/tgiangregorio/computational-genomics-platform)
  * (If not done yet) Set up the conda environment - see this [tutorial](https://galaxyproject.github.io/training-material/topics/contributing/tutorials/running-jekyll/tutorial.html) for details:
    * Move to the cloned repository with `cd clinical_genomics`
    * Install conda, if not already installed: `make install-conda`
