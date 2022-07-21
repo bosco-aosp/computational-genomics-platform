@@ -10,7 +10,7 @@ Automatic update of GitHub pages through Jekyll is disabled. To update pages you
  * Push the updated files. 
  * See this [tutorial](https://training.galaxyproject.org/training-material/topics/contributing/tutorials/gitpod/tutorial.html) for more details.
 
-When updating text, please follow the [formatting instructions](https://sigu-training.github.io/clinical_genomics/syntax.html).
+When updating text, please follow the [formatting instructions](https://tgiangregorio.github.io/computational-genomics-platform/syntax.html).
 
 ### Contributors
  * Tania Giangregorio - Sant’Orsola-Malpighi University Hospital, Bologna, Italy
