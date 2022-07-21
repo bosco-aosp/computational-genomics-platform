@@ -1,10 +1,6 @@
 tasks:
   - init: make bundle-install
-    command: make bundle-install
-    command: make install-conda
-    command: make create-env
-    command: source /home/gitpod/miniconda3/bin/activate
-    command: conda activate galaxy_training_material
+    command: make bundle-install && make install-conda && make create-env && source /home/gitpod/miniconda3/bin/activate && conda activate galaxy_training_material
 
 ports:
   - port: 4000
