@@ -4,7 +4,7 @@ layout: tutorial_hands_on
 title: Computational Genomics Platform 
 
 questions:
-- The Computational Genomics Platform (https://www.aosp.bo.it/content/genomica-computazionale) is conceived and structured by the Bologna Sant'Orsola Computational Genomics (BOSCO) team at IRCCS Azienda Ospedaliero-Universitaria di Bologna (AOUBO). Please address your questions by e-mail to any of the contributors.
+- The Computational Genomics Platform (https://www.aosp.bo.it/content/genomica-computazionale) is an integrated system of bioinformatic solutions conceived and structured by the Bologna Sant'Orsola Computational Genomics (BOSCO) team at IRCCS Azienda Ospedaliero-Universitaria di Bologna (AOUBO). Please address your questions by e-mail to any of the contributors.
 objectives:
 - To deploy, mantain and update a large range of bioinformatic tools for the analysis of genomic data, and to organize them in software environments and analysis workflows
 - To provide the means for the developments of bioinformatic software and for the design of genomic analysis
@@ -19,11 +19,11 @@ contributors:
 ---
 
 
-# Introduction
+# Platform components
 {:.no_toc}
 
-The Computational Genomics Platform offers diversified solutions for the analysis of genomic data:
-- _**Command Line Interface (CLI)**_ to run bioinformatic tools. The system componenents through which the users interact with the CLI are mainly:
+Here, you find a description of the Computational Genomics Platform at IRCCS AOUBO. The platform offers diversified solutions for the analysis of genomic data:
+- _**Command Line Interface (CLI)**_ to run bioinformatic tools. The systems through which the users interact with the CLI are mainly:
   - [_**Slurm**_](https://slurm.schedmd.com/documentation.html), the resource management and job scheduling system
   - [_**Snakemake**_](https://snakemake.readthedocs.io/en/stable/), the workflow management system
   - [_**Conda**_](https://docs.conda.io/en/latest/), the package and environment management system
@@ -44,36 +44,38 @@ The Computational Genomics Platform offers diversified solutions for the analysi
 >
 {: .agenda}
 
-# Galaxy
+# CLI
 
-To launch [Galaxy aosp instance](https://galaxy.aosp.biodec.com) browse to Galaxy aosp instance [galaxy.aosp.biodec.com](https://galaxy.aosp.biodec.com). Click the **Log in or register** link (top panel) and enter your email and password.
-
->    > ### {% icon comment %} Galaxy
->    > [Galaxy](https://galaxyproject.org/) is an open, web-based platform for accessible, reproducible, and transparent computational research. As a first step with Galaxy visit the page [https://galaxyproject.org/get-started/](https://galaxyproject.org/get-started/). A collection of tutorials developed and maintained by the Galaxy community is available at [https://training.galaxyproject.org/training-material](https://training.galaxyproject.org/training-material/). To view the list of tools that can be used within the Galaxy instance visit [https://toolshed.g2.bx.psu.edu/](https://toolshed.g2.bx.psu.edu/).
->    {: .comment}
-
-
-## Mantained Galaxy workflow
-
-The Medical Genetics unit had been developing Galaxy analysis pipelines for use with it's genomics data:
-- [Galaxy workflow to run Rabdomyzer tool](https://git.aosp.biodec.com/genetica-medica/rabdomyzer-xml/-/wikis/home)
-- [Galaxy workflow for the analysis of amplicon-based gene panel](https://git.aosp.biodec.com/aosp/piattaforma-bioinformatica/-/wikis/Galaxy-workflow-for-gene-panel)
-
-
-# Commandline interface (CLI)
+In the CLI, the users can run on their own any of the currently available bioinformatic tools as listed below, where the conda environment they belong to is also indicated. The BOSCO team also constructs and mantains some general purpose analysis workflows which can be launched in the CLI:
 
 ## Mantained CLI workflow
 
 [Workflow snakemake for WES data pre-processing and germline short variants calling, SNV and indels](https://git.aosp.biodec.com/tania.giangregorio/exome-germline-snv-indels-smk/-/wikis/Workflow%20snakemake%20per%20l'analisi%20dell'esoma) <br>
-Workflow snakemake for WGS data pre-processing and germline short variants calling (SNV and indels) <br>
-Workflow snakemake for BAM conversion to CRAM <br>
+Workflow snakemake for WGS data pre-processing and germline short variants calling (SNV and indels) _**UNDER CONSTRUCTION**_<br>
+Workflow snakemake for BAM conversion to CRAM _**UNDER CONSTRUCTION**_<br>
+
+# Galaxy
+
+In Galaxy, the users can run on their own any of the currently available bioinformatic tools as listed below, where their availability in Galaxy is indicated. 
+
+To launch the [Galaxy aosp instance](https://galaxy.aosp.biodec.com) browse to Galaxy aosp instance [galaxy.aosp.biodec.com](https://galaxy.aosp.biodec.com). Click the **Log in or register** link (top panel) and enter your email and password.
+
+>    > ### {% icon comment %} Galaxy
+>    > [Galaxy](https://galaxyproject.org/) is an open-source, web-based portal for accessible, reproducible, and transparent computational research. As a first step with Galaxy visit the page [https://galaxyproject.org/get-started/](https://galaxyproject.org/get-started/). A collection of tutorials developed and maintained by the Galaxy community is available at [https://training.galaxyproject.org/training-material](https://training.galaxyproject.org/training-material/). To view the list of tools that can be used within the Galaxy instance visit [https://toolshed.g2.bx.psu.edu/](https://toolshed.g2.bx.psu.edu/).
+>    {: .comment}
+
+## Mantained Galaxy workflows
+
+The BOSCO team also constructs and mantains some general purpose analysis workflows which can be launched in Galaxy:
+
+- [Galaxy workflow to run Rabdomyzer tool](https://git.aosp.biodec.com/genetica-medica/rabdomyzer-xml/-/wikis/home)
+- [Galaxy workflow for the analysis of amplicon-based gene panel](https://git.aosp.biodec.com/aosp/piattaforma-bioinformatica/-/wikis/Galaxy-workflow-for-gene-pane
 
 
 # OpenCGA 
 
 
-# Bioinformatic tools currently available
-
+# Bioinformatic tools
 
 | Tool | Version | Galaxy | Commandline | Conda Environment|
 | --- | --- | --- | --- | --- |
