@@ -23,7 +23,7 @@ contributors:
 {:.no_toc}
 
 The Computational Genomics Platform offers diversified solutions for the analysis of genomic data:
-- [_**Command Line Interface (CLI)**_] to run bioinformatic tools. The system componenents through which the users interact with the CLI are mainly:
+- _**Command Line Interface (CLI)**_ to run bioinformatic tools. The system componenents through which the users interact with the CLI are mainly:
   - [_**Slurm**_](https://slurm.schedmd.com/documentation.html), the resource management and job scheduling system
   - [_**Snakemake**_](https://snakemake.readthedocs.io/en/stable/), the workflow management system
   - [_**Conda**_](https://docs.conda.io/en/latest/), the package and environment management system
