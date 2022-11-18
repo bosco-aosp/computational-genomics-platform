@@ -24,9 +24,9 @@ contributors:
 
 The Computational Genomics Platform offers diversified solutions for the analysis of genomic data:
 - [_**Command Line Interface (CLI)**_] to run bioinformatic tools. The system componenents through which the users interact with the CLI are mainly:
-- - [_**Slurm**_](https://slurm.schedmd.com/documentation.html), the resource management and job scheduling system
-- - [_**Snakemake**_](https://snakemake.readthedocs.io/en/stable/), the workflow management system
-- - [_**Conda**_](https://docs.conda.io/en/latest/), the package and environment management system
+  - [_**Slurm**_](https://slurm.schedmd.com/documentation.html), the resource management and job scheduling system
+  - [_**Snakemake**_](https://snakemake.readthedocs.io/en/stable/), the workflow management system
+  - [_**Conda**_](https://docs.conda.io/en/latest/), the package and environment management system
 - [_**Galaxy**_](https://galaxyproject.org/) to let the users with no or poor programming experience to carry out computational genomic projects in a user-friendly web portal
 - [_**OpenCGA**_](http://docs.opencb.org/display/opencga/Welcome+to+OpenCGA) to organize genomic projects in a database for easily storing and querying variant datasets
 - [_**GitLab**_](https://docs.gitlab.com/) to support bioinformatic software development.
