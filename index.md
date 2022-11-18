@@ -18,7 +18,6 @@ contributors:
 
 ---
 
-
 # Platform components
 {:.no_toc}
 
@@ -48,7 +47,7 @@ Here, you find a description of the Computational Genomics Platform at IRCCS AOU
 
 In the CLI, the users can run on their own any of the currently available bioinformatic tools as listed below, where the conda environment they belong to is also indicated.
 
-## Mantained CLI workflow
+## Mantained CLI workflows
 
 The BOSCO team also constructs and mantains some general purpose analysis workflows which can be launched in the CLI:
 
@@ -58,7 +57,7 @@ Workflow snakemake for BAM conversion to CRAM _**UNDER CONSTRUCTION**_<br>
 
 # Galaxy
 
-In Galaxy, the users can run on their own any of the currently available bioinformatic tools as listed below, where their availability in Galaxy is indicated. 
+In Galaxy, the users can run on their own any of the currently available bioinformatic tools as listed below, where their accessibility in Galaxy is indicated. 
 
 To launch the [Galaxy aosp instance](https://galaxy.aosp.biodec.com) browse to Galaxy aosp instance [galaxy.aosp.biodec.com](https://galaxy.aosp.biodec.com). Click the **Log in or register** link (top panel) and enter your email and password.
 
@@ -71,9 +70,7 @@ To launch the [Galaxy aosp instance](https://galaxy.aosp.biodec.com) browse to G
 The BOSCO team also constructs and mantains some general purpose analysis workflows which can be launched in Galaxy:
 
 - [Galaxy workflow to run Rabdomyzer tool](https://git.aosp.biodec.com/genetica-medica/rabdomyzer-xml/-/wikis/home)
-- [Galaxy workflow for the analysis of amplicon-based gene panel](https://git.aosp.biodec.com/aosp/piattaforma-bioinformatica/-/wikis/Galaxy-workflow-for-gene-pane
-
-# OpenCGA 
+- [Galaxy workflow for the analysis of amplicon-based gene panel](https://git.aosp.biodec.com/aosp/piattaforma-bioinformatica/-/wikis/Galaxy-workflow-for-gene-pane 
 
 # Bioinformatic tools
 
@@ -135,7 +132,22 @@ The BOSCO team also constructs and mantains some general purpose analysis workfl
 |[platypus-variant](https://github.com/andyrimmer/Platypus)|0.8.1.1|❌|✅|platypus-variant|
 |h3m2|||✅|custom|
 
+# OpenCGA
+
+OpenCGA represents the framework to load and retrieve variation from a genomic database and also provides a data visualization browser and fucntional as well as clinical analysis modules.
+
+>    > ### {% icon comment %} OpenCGA
+>    > [OpenCGA](https://docs.opencga.opencb.org/) is the most advanced big data genomic analysis platform. It is implemented as an open-source project that implements a high-performance, scalable and secure platform for Genomic data analysis and visualisation. OpenCGA implements a complete solution that covers all aspects of genomic analysis: metadata database, authentication and security, variant normalisation and aggregation, variant storage and annotation, highly scalable variant NoSQL storage engine, alignment and coverage, big data variant analysis, RESTful web services, visualisation
+OpenCGA is developed and maintained in the University of Cambridge and it is currently used by several big data projects such as GEL (Genomics England).
+>    {: .comment}
+
 # Gitlab
+
+With Gitlab, the BOSCO team builds its own bioinformatic software and supports anyone who wants to do it. It also provides the issue-tracking system to handle the problems encounterd by the users on the Computational Genomics Platform.
+
+>    > ### {% icon comment %} GitLab
+>    > [GitLab](https://about.gitlab.com/) is a [DevOps](https://en.wikipedia.org/wiki/DevOps) software package that combines the ability to develop, secure, and operate software collaboratively and in a single application.
+>    {: .comment}
 
 # Contributors
 {:.no_toc}
