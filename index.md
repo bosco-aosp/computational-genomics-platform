@@ -46,9 +46,11 @@ Here, you find a description of the Computational Genomics Platform at IRCCS AOU
 
 # CLI
 
-In the CLI, the users can run on their own any of the currently available bioinformatic tools as listed below, where the conda environment they belong to is also indicated. The BOSCO team also constructs and mantains some general purpose analysis workflows which can be launched in the CLI:
+In the CLI, the users can run on their own any of the currently available bioinformatic tools as listed below, where the conda environment they belong to is also indicated.
 
 ## Mantained CLI workflow
+
+The BOSCO team also constructs and mantains some general purpose analysis workflows which can be launched in the CLI:
 
 [Workflow snakemake for WES data pre-processing and germline short variants calling, SNV and indels](https://git.aosp.biodec.com/tania.giangregorio/exome-germline-snv-indels-smk/-/wikis/Workflow%20snakemake%20per%20l'analisi%20dell'esoma) <br>
 Workflow snakemake for WGS data pre-processing and germline short variants calling (SNV and indels) _**UNDER CONSTRUCTION**_<br>
@@ -71,9 +73,7 @@ The BOSCO team also constructs and mantains some general purpose analysis workfl
 - [Galaxy workflow to run Rabdomyzer tool](https://git.aosp.biodec.com/genetica-medica/rabdomyzer-xml/-/wikis/home)
 - [Galaxy workflow for the analysis of amplicon-based gene panel](https://git.aosp.biodec.com/aosp/piattaforma-bioinformatica/-/wikis/Galaxy-workflow-for-gene-pane
 
-
 # OpenCGA 
-
 
 # Bioinformatic tools
 
@@ -135,9 +135,7 @@ The BOSCO team also constructs and mantains some general purpose analysis workfl
 |[platypus-variant](https://github.com/andyrimmer/Platypus)|0.8.1.1|❌|✅|platypus-variant|
 |h3m2|||✅|custom|
 
-
 # Gitlab
-
 
 # Contributors
 {:.no_toc}
