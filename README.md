@@ -1,4 +1,4 @@
-## On-line documentation on [“Computational genomics platform” using Galaxy](https://bosco-aosp.github.io/computational-genomics-platform/)
+## On-line documentation on [Computational genomics platform](https://bosco-aosp.github.io/computational-genomics-platform/)
 
 ### Updating GitHub Pages - for Admins only
 Automatic update of GitHub pages through Jekyll is disabled. To update pages you have to build the website locally and push the updated pages:
