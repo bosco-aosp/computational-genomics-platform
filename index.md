@@ -1,15 +1,16 @@
 ---
 layout: tutorial_hands_on
 
-title: Computational Genomics Platform 
+title: Bologna Sant'Orsola Computational Genomics (BOSCO) 
 
-questions:
-- The Computational Genomics Platform (https://www.aosp.bo.it/content/genomica-computazionale) is an integrated system of bioinformatic solutions conceived and structured by the Bologna Sant'Orsola Computational Genomics (BOSCO) team at IRCCS Azienda Ospedaliero-Universitaria di Bologna (AOUBO). Please address your questions by e-mail to any of the contributors.
 objectives:
-- To deploy, mantain and update a large range of bioinformatic tools for the analysis of genomic data, and to organize them in software environments and analysis workflows
+- To design, organize and mantain the Computational Genomics Platform at IRCCS Azienda Ospedaliero-Universitaria di Bologna (AOUBO).
+- To develop, deploy and update a large range of bioinformatic tools for the analysis of genomic data, and to organize them in software environments and analysis workflows
 - To provide the means for the developments of bioinformatic software and for the design of genomic analysis
 - To curate a genomic variant database populated by the genetic variation identified by IRCCS AOUBO projects and/or collaborations.
 
+questions:
+-  Please address your questions by e-mail to any of the contributors (e-mails at the bottom of this wiki).
 
 contributors:
 - tgiangregorio
@@ -18,10 +19,10 @@ contributors:
 
 ---
 
-# Platform components
+# Computational Genomics Platform
 {:.no_toc}
 
-Here, you find a description of the Computational Genomics Platform at IRCCS AOUBO. The platform offers diversified solutions for the analysis of genomic data:
+The Computational Genomics Platform (https://www.aosp.bo.it/content/genomica-computazionale) is an integrated system of bioinformatic solutions designed and mantained by the Bologna Sant'Orsola Computational Genomics (BOSCO) team at IRCCS AOUBO. The platform offers diversified solutions for the analysis of genomic data:
 - _**Command Line Interface (CLI)**_ to run bioinformatic tools. The systems through which the users interact with the CLI are mainly:
   - [_**Slurm**_](https://slurm.schedmd.com/documentation.html), the resource management and job scheduling system
   - [_**Snakemake**_](https://snakemake.readthedocs.io/en/stable/), the workflow management system
@@ -29,10 +30,6 @@ Here, you find a description of the Computational Genomics Platform at IRCCS AOU
 - [_**Galaxy**_](https://galaxyproject.org/) to let the users with no or poor programming experience to carry out computational genomic projects in a user-friendly web portal
 - [_**OpenCGA**_](http://docs.opencb.org/display/opencga/Welcome+to+OpenCGA) to organize genomic projects in a database for easily storing and querying variant datasets
 - [_**GitLab**_](https://docs.gitlab.com/) to support bioinformatic software development.
-
-
-
-
 
 > ### Agenda
 >
@@ -151,10 +148,9 @@ With Gitlab, the BOSCO team builds its own bioinformatic software and supports a
 
 # Contributors
 {:.no_toc}
-Bologna Sant'Orsola Computational Genomics (BOSCO)
-U.O.C. Genetica Medica, S.S. Genomica Computazionale, IRCCS Azienda Ospedaliero-Universitaria di Bologna
+Bologna Sant'Orsola Computational Genomics (BOSCO) team
+U.O.C. Genetica Medica, S.S. Genomica Computazionale, IRCCS Azienda Ospedaliero-Universitaria di Bologna (AOUBO)
+Please address your questions to:
  * Tania Giangregorio - tania.giangregorio@aosp.bo.it
  * Federica Isidori - federica.isidori@aosp.bo.it
  * [Tommaso Pippucci](https://www.aosp.bo.it/content/curriculum?E=154659) - tommaso.pippucci@aosp.bo.it
-
-
