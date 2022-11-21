@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Bioinformatics platform</title>
+        <title>Bologna Sant'Orsola Computational Genomics (BOSCO)</title>
         
         <link rel="stylesheet" href="/computational-genomics-platform/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/computational-genomics-platform/assets/css/bootstrap-toc.min.css">
@@ -20,7 +20,7 @@
         
         
         <meta name="description" content="Collection of tutorials developed and maintained by the w..." />
-        <meta property="og:title" content="Galaxy Training: Bioinformatics platform" />
+        <meta property="og:title" content="Galaxy Training: Bologna Sant'Orsola Computational Genomics (BOSCO)" />
         <meta property="og:description" content="Collection of tutorials developed and maintained by the w..." />
         <meta property="og:image" content="/computational-genomics-platform/assets/images/GTNLogo1000.png" />
     </head>
@@ -50,7 +50,7 @@
     </script>
 
     <section class="tutorial">
-        <h1 data-toc-skip>Bioinformatics platform</h1>
+        <h1 data-toc-skip>Bologna Sant'Orsola Computational Genomics (BOSCO)</h1>
         
 
         <div class="contributors-line">By: 
@@ -64,10 +64,7 @@
             <strong><i class="fa far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</strong>
             <ul>
             
-            <li><p>{}</p>
-</li>
-            
-            <li><p>{}</p>
+            <li><p>Please address your questions by e-mail to any of the contributors (e-mails at the bottom of this wiki).</p>
 </li>
             
             </ul>
@@ -75,10 +72,16 @@
             <strong><i class="fa fas fa-bullseye" aria-hidden="true"></i><span class="visually-hidden">objectives</span> Objectives</strong>
             <ul>
             
-            <li><p>Perform in-depth analysis of sequencing data at multiple levels (fastq, bam, vcf)</p>
+            <li><p>To design, organize and mantain the Computational Genomics Platform at IRCCS Azienda Ospedaliero-Universitaria di Bologna (AOUBO).</p>
 </li>
             
-            <li><p>Software design and development</p>
+            <li><p>To develop, deploy and update a large range of bioinformatic tools for the analysis of genomic data, and to organize them in software environments and analysis workflows</p>
+</li>
+            
+            <li><p>To provide support for the developments of bioinformatic software and for the design of genomic analysis</p>
+</li>
+            
+            <li><p>To curate a genomic variant database populated by the genetic variation identified by IRCCS AOUBO projects and/or collaborations.</p>
 </li>
             
             </ul>
@@ -94,7 +97,7 @@
 
             
 
-            <p><strong> <i class="fa far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Jul 20, 2022 </p>
+            <p><strong> <i class="fa far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Nov 21, 2022 </p>
         </blockquote>
 
         <div class="container">
@@ -104,17 +107,22 @@
                     <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
                 </div>
                 <div class="col-sm-10">
-                    <h1 class="no_toc" id="introduction">Introduction</h1>
+                    <figure id="figure-1"><img src="images/BOSCO_logo_scritta.jpg" alt="Alt text" /><figcaption><span class="figcaption-prefix">Figure 1:</span> BOSCO logo</figcaption></figure>
 
-<p>The solution adopted by the IRCCS S.Orsola-Malpighi uses a modular hyper-converged infrastructure that integrates compute and data storage in a single cluster.
-Takes advantages of automation and version control systems to handle bioinformatics software and exploits various tools for genomics data analysis, fruition and preservation:</p>
+<h1 class="no_toc" id="computational-genomics-platform">Computational Genomics Platform</h1>
+
+<p>The Computational Genomics Platform (https://www.aosp.bo.it/content/genomica-computazionale) is an integrated system of bioinformatic solutions designed and mantained by the Bologna Sant’Orsola Computational Genomics (BOSCO) team at IRCCS AOUBO. The platform offers diversified solutions for the analysis of genomic data:</p>
 <ul>
-  <li><a href="https://galaxyproject.org/"><em><strong><span class="notranslate">Galaxy</span></strong></em></a> a platform for FAIR data analysis that enables users with no programming experience to perform computational analysis using a web user-friendly interface.</li>
-  <li><a href="https://snakemake.readthedocs.io/en/stable/"><em><strong>Snakemake</strong></em></a> a <span class="notranslate">workflow</span> management system to create reproducible and scalable data analyses.</li>
-  <li><a href="https://slurm.schedmd.com/documentation.html"><em><strong>Slurm</strong></em></a> a resource management and a job scheduling system.</li>
-  <li><a href="https://docs.conda.io/en/latest/"><em><strong>Conda</strong></em></a> a package management system and environment management system.</li>
-  <li><a href="http://docs.opencb.org/display/opencga/Welcome+to+OpenCGA"><em><strong>OpenCGA</strong></em></a> a framework for storing and querying genomics data.</li>
-  <li><a href="https://docs.gitlab.com/"><em><strong>GitLab</strong></em></a> an application for software development, security, and operations that enables concurrent DevOps.</li>
+  <li><em><strong>Command Line Interface (CLI)</strong></em> to run bioinformatic tools. The systems through which the users interact with the CLI are mainly:
+    <ul>
+      <li><a href="https://slurm.schedmd.com/documentation.html"><em><strong>Slurm</strong></em></a>, the resource management and job scheduling system</li>
+      <li><a href="https://snakemake.readthedocs.io/en/stable/"><em><strong>Snakemake</strong></em></a>, the <span class="notranslate">workflow</span> management system</li>
+      <li><a href="https://docs.conda.io/en/latest/"><em><strong>Conda</strong></em></a>, the package and environment management system</li>
+    </ul>
+  </li>
+  <li><a href="https://galaxyproject.org/"><em><strong><span class="notranslate">Galaxy</span></strong></em></a> to let the users with no or poor programming experience to carry out computational genomic projects in a user-friendly web portal</li>
+  <li><a href="http://docs.opencb.org/display/opencga/Welcome+to+OpenCGA"><em><strong>OpenCGA</strong></em></a> to organize genomic projects in a database for easily storing and querying variant datasets</li>
+  <li><a href="https://docs.gitlab.com/"><em><strong>GitLab</strong></em></a> to support bioinformatic software development.</li>
 </ul>
 
 <blockquote class="agenda">
@@ -123,51 +131,56 @@ Takes advantages of automation and version control systems to handle bioinformat
   <p>In this documentation, you can find:</p>
 
 <ol id="markdown-toc">
+  <li><a href="#cli" id="markdown-toc-cli">CLI</a>    <ol>
+      <li><a href="#mantained-cli-workflows" id="markdown-toc-mantained-cli-workflows">Mantained CLI workflows</a></li>
+    </ol>
+  </li>
   <li><a href="#galaxy" id="markdown-toc-galaxy"><span class="notranslate">Galaxy</span></a>    <ol>
-      <li><a href="#mantained-galaxy-workflow" id="markdown-toc-mantained-galaxy-workflow">Mantained <span class="notranslate">Galaxy</span> <span class="notranslate">workflow</span></a></li>
+      <li><a href="#mantained-galaxy-workflows" id="markdown-toc-mantained-galaxy-workflows">Mantained <span class="notranslate">Galaxy</span> workflows</a></li>
     </ol>
   </li>
-  <li><a href="#commandline-interface-cli" id="markdown-toc-commandline-interface-cli">Commandline interface (CLI)</a>    <ol>
-      <li><a href="#mantained-cli-workflow" id="markdown-toc-mantained-cli-workflow">Mantained CLI <span class="notranslate">workflow</span></a></li>
-    </ol>
-  </li>
+  <li><a href="#bioinformatic-tools" id="markdown-toc-bioinformatic-tools">Bioinformatic tools</a></li>
   <li><a href="#opencga" id="markdown-toc-opencga">OpenCGA</a></li>
-  <li><a href="#tools-available" id="markdown-toc-tools-available">Tools available</a></li>
   <li><a href="#gitlab" id="markdown-toc-gitlab">Gitlab</a></li>
 </ol>
 
 </blockquote>
 
+<h1 id="cli">CLI</h1>
+
+<p>In the CLI, the users can run on their own any of the currently available bioinformatic tools as listed below, where the conda environment they belong to is also indicated.</p>
+
+<h2 id="mantained-cli-workflows">Mantained CLI workflows</h2>
+
+<p>The BOSCO team also constructs and mantains some general purpose analysis workflows which can be launched in the CLI:</p>
+
+<p><a href="https://git.aosp.biodec.com/tania.giangregorio/exome-germline-snv-indels-smk/-/wikis/Workflow%20snakemake%20per%20l'analisi%20dell'esoma"><span class="notranslate">Workflow</span> snakemake for WES data pre-processing and germline short variants calling, SNV and indels</a> <br />
+<span class="notranslate">Workflow</span> snakemake for WGS data pre-processing and germline short variants calling (SNV and indels) <em><strong>UNDER CONSTRUCTION</strong></em><br />
+<span class="notranslate">Workflow</span> snakemake for BAM conversion to CRAM <em><strong>UNDER CONSTRUCTION</strong></em><br /></p>
+
 <h1 id="galaxy"><span class="notranslate">Galaxy</span></h1>
 
-<p>To launch <a href="https://galaxy.aosp.biodec.com"><span class="notranslate">Galaxy</span> aosp instance</a> browse to <span class="notranslate">Galaxy</span> aosp instance <a href="https://galaxy.aosp.biodec.com"><span class="notranslate">galaxy</span>.aosp.biodec.com</a>. Click the <strong>Log in or register</strong> link (top panel) and enter your email and password.</p>
+<p>In <span class="notranslate">Galaxy</span>, the users can run on their own any of the currently available bioinformatic tools as listed below, where their accessibility in <span class="notranslate">Galaxy</span> is indicated.</p>
+
+<p>To launch the <a href="https://galaxy.aosp.biodec.com"><span class="notranslate">Galaxy</span> aosp instance</a> browse to <span class="notranslate">Galaxy</span> aosp instance <a href="https://galaxy.aosp.biodec.com"><span class="notranslate">galaxy</span>.aosp.biodec.com</a>. Click the <strong>Log in or register</strong> link (top panel) and enter your email and password.</p>
 
 <blockquote>
   <blockquote class="comment">
     <h3 id="comment-galaxy"><i class="fa far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden">comment</span> <span class="notranslate">Galaxy</span></h3>
-    <p><a href="https://galaxyproject.org/"><span class="notranslate">Galaxy</span></a> is an open, web-based platform for accessible, reproducible, and transparent computational research. As a first step with <span class="notranslate">Galaxy</span> visit the page <a href="https://galaxyproject.org/get-started/">https://<span class="notranslate">galaxy</span>project.org/get-started/</a>. A collection of tutorials developed and maintained by the <span class="notranslate">Galaxy</span> community is available at <a href="https://training.galaxyproject.org/training-material/">https://training.<span class="notranslate">galaxy</span>project.org/training-material</a>. To view the list of tools that can be used within the <span class="notranslate">Galaxy</span> instance visit <a href="https://toolshed.g2.bx.psu.edu/">https://<span class="notranslate">toolshed</span>.g2.bx.psu.edu/</a>.</p>
+    <p><a href="https://galaxyproject.org/"><span class="notranslate">Galaxy</span></a> is an open-source, web-based portal for accessible, reproducible, and transparent computational research. As a first step with <span class="notranslate">Galaxy</span> visit the page <a href="https://galaxyproject.org/get-started/">https://<span class="notranslate">galaxy</span>project.org/get-started/</a>. A collection of tutorials developed and maintained by the <span class="notranslate">Galaxy</span> community is available at <a href="https://training.galaxyproject.org/training-material/">https://training.<span class="notranslate">galaxy</span>project.org/training-material</a>. To view the list of tools that can be used within the <span class="notranslate">Galaxy</span> instance visit <a href="https://toolshed.g2.bx.psu.edu/">https://<span class="notranslate">toolshed</span>.g2.bx.psu.edu/</a>.</p>
   </blockquote>
 </blockquote>
 
-<h2 id="mantained-galaxy-workflow">Mantained <span class="notranslate">Galaxy</span> <span class="notranslate">workflow</span></h2>
+<h2 id="mantained-galaxy-workflows">Mantained <span class="notranslate">Galaxy</span> workflows</h2>
 
-<p>The Medical Genetics unit had been developing <span class="notranslate">Galaxy</span> analysis pipelines for use with it’s genomics data:</p>
+<p>The BOSCO team also constructs and mantains some general purpose analysis workflows which can be launched in <span class="notranslate">Galaxy</span>:</p>
+
 <ul>
   <li><a href="https://git.aosp.biodec.com/genetica-medica/rabdomyzer-xml/-/wikis/home"><span class="notranslate">Galaxy</span> <span class="notranslate">workflow</span> to run Rabdomyzer tool</a></li>
-  <li><a href="https://git.aosp.biodec.com/aosp/piattaforma-bioinformatica/-/wikis/Galaxy-workflow-for-gene-panel"><span class="notranslate">Galaxy</span> <span class="notranslate">workflow</span> for the analysis of amplicon-based gene panel</a></li>
+  <li>[<span class="notranslate">Galaxy</span> <span class="notranslate">workflow</span> for the analysis of amplicon-based gene panel](https://git.aosp.biodec.com/aosp/piattaforma-bioinformatica/-/wikis/<span class="notranslate">Galaxy</span>-<span class="notranslate">workflow</span>-for-gene-pane</li>
 </ul>
 
-<h1 id="commandline-interface-cli">Commandline interface (CLI)</h1>
-
-<h2 id="mantained-cli-workflow">Mantained CLI <span class="notranslate">workflow</span></h2>
-
-<p><a href="https://git.aosp.biodec.com/tania.giangregorio/exome-germline-snv-indels-smk/-/wikis/Workflow%20snakemake%20per%20l'analisi%20dell'esoma"><span class="notranslate">Workflow</span> snakemake for WES data pre-processing and germline short variants calling, SNV and indels</a> <br />
-<span class="notranslate">Workflow</span> snakemake for WGS data pre-processing and germline short variants calling (SNV and indels) <br />
-<span class="notranslate">Workflow</span> snakemake for BAM conversion to CRAM <br /></p>
-
-<h1 id="opencga">OpenCGA</h1>
-
-<h1 id="tools-available">Tools available</h1>
+<h1 id="bioinformatic-tools">Bioinformatic tools</h1>
 
 <table>
   <thead>
@@ -568,15 +581,38 @@ Takes advantages of automation and version control systems to handle bioinformat
   </tbody>
 </table>
 
+<h1 id="opencga">OpenCGA</h1>
+
+<p>OpenCGA represents the framework to load and retrieve variation from a genomic database and also provides a data visualization browser and fucntional as well as clinical analysis modules.</p>
+
+<blockquote>
+  <blockquote class="comment">
+    <h3 id="comment-opencga"><i class="fa far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden">comment</span> OpenCGA</h3>
+    <p><a href="https://docs.opencga.opencb.org/">OpenCGA</a> is the most advanced big data genomic analysis platform. It is implemented as an open-source project that implements a high-performance, scalable and secure platform for Genomic data analysis and visualisation. OpenCGA implements a complete solution that covers all aspects of genomic analysis: metadata database, authentication and security, variant normalisation and aggregation, variant storage and annotation, highly scalable variant NoSQL storage engine, alignment and coverage, big data variant analysis, RESTful web services, visualisation
+OpenCGA is developed and maintained in the University of Cambridge and it is currently used by several big data projects such as GEL (Genomics England).</p>
+  </blockquote>
+</blockquote>
+
 <h1 id="gitlab">Gitlab</h1>
 
-<h1 class="no_toc" id="contributors">Contributors</h1>
-<ul>
-  <li>Tania Giangregorio - Sant’Orsola-Malpighi University Hospital, Bologna, Italy</li>
-  <li>Federica Isidori - Sant’Orsola-Malpighi University Hospital, Bologna, Italy</li>
-  <li><a href="https://www.aosp.bo.it/content/curriculum?E=154659">Tommaso Pippucci</a> - Sant’Orsola-Malpighi University Hospital, Bologna, Italy</li>
-</ul>
+<p>With Gitlab, the BOSCO team builds its own bioinformatic software and supports anyone who wants to do it. It also provides the issue-tracking system to handle the problems encounterd by the users on the Computational Genomics Platform.</p>
 
+<blockquote>
+  <blockquote class="comment">
+    <h3 id="comment-gitlab"><i class="fa far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden">comment</span> GitLab</h3>
+    <p><a href="https://about.gitlab.com/">GitLab</a> is a <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a> software package that combines the ability to develop, secure, and operate software collaboratively and in a single application.</p>
+  </blockquote>
+</blockquote>
+
+<h1 class="no_toc" id="contributors">Contributors</h1>
+<p>Bologna Sant’Orsola Computational Genomics (BOSCO) team
+U.O.C. Genetica Medica, S.S. Genomica Computazionale, IRCCS Azienda Ospedaliero-Universitaria di Bologna (AOUBO)
+Please address your questions to:</p>
+<ul>
+  <li>Tania Giangregorio - tania.giangregorio@aosp.bo.it</li>
+  <li>Federica Isidori - federica.isidori@aosp.bo.it</li>
+  <li><a href="https://www.aosp.bo.it/content/curriculum?E=154659">Tommaso Pippucci</a> - tommaso.pippucci@aosp.bo.it</li>
+</ul>
 
 
                     
@@ -587,7 +623,7 @@ Takes advantages of automation and version control systems to handle bioinformat
                     <h1>Citing this Tutorial</h1>
                     <p>
                         <ol>
-                            <li id="citation-text">tgiangregorio, easydorica, tommasopippucci, 2022 <b>Bioinformatics platform (Galaxy Training Materials)</b>. <a href="/computational-genomics-platform/">/computational-genomics-platform/</a> Online; accessed TODAY
+                            <li id="citation-text">tgiangregorio, easydorica, tommasopippucci, 2022 <b>Bologna Sant'Orsola Computational Genomics (BOSCO) (Galaxy Training Materials)</b>. <a href="/computational-genomics-platform/">/computational-genomics-platform/</a> Online; accessed TODAY
                             </li>
                             <li>
                             Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
@@ -603,10 +639,10 @@ Takes advantages of automation and version control systems to handle bioinformat
                     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight">
 <code id="citation-code">@misc{-,
     author = "tgiangregorio and easydorica and tommasopippucci",
-    title = "Bioinformatics platform (Galaxy Training Materials)",
+    title = "Bologna Sant'Orsola Computational Genomics (BOSCO) (Galaxy Training Materials)",
     year = "2022",
-    month = "07",
-    day = "20"
+    month = "11",
+    day = "21"
     url = "\url{/computational-genomics-platform/}",
     note = "[Online; accessed TODAY]"
 }

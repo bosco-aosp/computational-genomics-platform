@@ -4,7 +4,7 @@ layout: tutorial_hands_on
 title: Bologna Sant'Orsola Computational Genomics (BOSCO)
 
 objectives:
-- To design, organize and mantain the Computational Genomics Platform at IRCCS Azienda Ospedaliero-Universitaria di Bologna (AOUBO). In particular:
+- To design, organize and mantain the Computational Genomics Platform at IRCCS Azienda Ospedaliero-Universitaria di Bologna (AOUBO).
 - To develop, deploy and update a large range of bioinformatic tools for the analysis of genomic data, and to organize them in software environments and analysis workflows
 - To provide support for the developments of bioinformatic software and for the design of genomic analysis
 - To curate a genomic variant database populated by the genetic variation identified by IRCCS AOUBO projects and/or collaborations.
