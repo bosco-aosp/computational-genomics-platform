@@ -17,7 +17,7 @@ contributors:
 - easydorica
 - tommasopippucci
 ---
-![Bosco logo](./images/BOSCO_logo_scritta.jpg)
+![Bosco logo]({{site.baseurl}}/images/BOSCO_logo_scritta.jpg)
 
 # Computational Genomics Platform
 {:.no_toc}
