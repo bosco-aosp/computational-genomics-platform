@@ -17,7 +17,7 @@
 title: "Bioinformatic Platform"
 email: email@gmail.com
 description: A collection of tutorials generated and maintained by UO Genetica Medica Sant'Orsola 
-url: "https://bosco-aosp.github.io"
+url: "https://bosco-aosp.github.io/"
 baseurl: "/computational-genomics-platform"
 github_repository: "https://github.com/bosco-aosp/computational-genomics-platform"
 github_repository_branch: "master"
