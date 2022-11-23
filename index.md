@@ -1,7 +1,7 @@
 ---
 layout: tutorial_hands_on
 
-title: Bologna Sant'Orsola Computational Genomics (BOSCO)
+title: <img src="images/BOSCO_logo_scritta.jpg" alt="BOSCO logo" width="60% "height="60%"> <br> Computational Genomics Platform
 
 objectives:
 - To design, organize and mantain the Computational Genomics Platform at IRCCS Azienda Ospedaliero-Universitaria di Bologna (AOUBO)
@@ -17,10 +17,7 @@ contributors:
 - easydorica
 - tommasopippucci
 ---
-![Bosco logo]({{site.baseurl}}/images/BOSCO_logo_scritta.jpg)
 
-# Computational Genomics Platform
-{:.no_toc}
 
 The Computational Genomics Platform (https://www.aosp.bo.it/content/genomica-computazionale) is an integrated system of bioinformatic solutions designed and mantained by the Bologna Sant'Orsola Computational Genomics (BOSCO) team at IRCCS AOUBO. The platform offers diversified solutions for the analysis of genomic data:
 - _**Command Line Interface (CLI)**_ to run bioinformatic tools. The systems through which the users interact with the CLI are mainly:
